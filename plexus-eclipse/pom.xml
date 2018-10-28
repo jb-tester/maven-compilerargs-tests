@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <groupId>com.mytests.checkCompilerOptions.single</groupId>
+        <version>1.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>plexus-eclipse</artifactId>
+     <build>
+         <plugins>
+         <plugin>
+             <artifactId>maven-compiler-plugin</artifactId>
+             <version>3.8.0</version>
+             <configuration>
+                 <compilerId>eclipse</compilerId>
+                 <target>1.7</target>
+                 <source>1.7</source>
+                 <compilerArgs>
+
+                     <arg>-g:vars</arg>
+                     <arg>-enableJavadoc</arg>
+                     <arg>-showversion</arg>
+                 </compilerArgs>
+                 <compilerArgument>-warn:-serial</compilerArgument>
+             </configuration>
+             <dependencies>
+                 <dependency>
+                     <groupId>org.codehaus.plexus</groupId>
+                     <artifactId>plexus-compiler-eclipse</artifactId>
+                     <version>LATEST</version>
+                 </dependency>
+             </dependencies>
+         </plugin>
+         </plugins>
+     </build>
+      <!-- https://stackoverflow.com/questions/33164976/using-eclipse-java-compiler-ecj-in-maven-builds-->
+    <!-- https://stackoverflow.com/questions/36696242/use-maven-compiler-plugin-with-eclipse-compiler-and-lombok-->
+</project>
